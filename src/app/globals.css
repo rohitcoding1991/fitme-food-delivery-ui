@@ -1,0 +1,59 @@
+@import url(../assets/fonts/allFonts.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pop-thin: "Poppins100";
+  --pop-extraLight: "Poppins200";
+  --pop-light: "Poppins300";
+  --pop-regular: "Poppins400";
+  --pop-medium: "Poppins500";
+  --pop-semibold: "Poppins600";
+  --pop-bold: "Poppins700";
+  --pop-extraBold: "Poppins800";
+  --pop-black: "Poppins900";
+  --black-400: #202020;
+  --saffron-400: #fc8019;
+  --gray-400: #404040;
+  --gray-300:#808080;
+  --gray-100:#F8F8F8;
+  --green-300:#1AC84B;
+  --loading-bg:#f7e0c9fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.imageContainer {
+  overflow: hidden; /* Hide overflow to hide images going out of container */
+  position: relative; /* Position container relatively to position absolute images */
+}
+
+.imageContainer > div {
+  position: absolute; /* Position images absolutely */
+  top: 0;
+  left: 0;
+  transition: all 0.5s; /* Transition for smooth animation */
+}
